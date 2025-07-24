@@ -1,0 +1,155 @@
+/* Import a professional font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* --- CLASSIC LIGHT THEME VARIABLES --- */
+:root {
+  --primary-glow: #007bff;      /* A classic, vibrant blue */
+  --primary-accent: #0056b3;     /* A deeper blue for gradients/hovers */
+  --text-color: #212529;         /* A soft, readable black for text */
+  --text-highlight: #28a745;     /* A standard "success" green */
+  --bg-gradient-start: #4395e7;  /* A very light grey */
+  --bg-gradient-end: #e9ecef;    /* A slightly darker light grey */
+  --container-bg: #ffffff;      /* A clean white for the main card */
+  --input-bg: #f1f3f5;          /* A subtle grey for input fields */
+  --input-focus-bg: #ffffff;      /* White for a clean focus state */
+  --border-color: #ced4da;        /* A standard grey border color */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* A softer shadow for light UI */
+  --border-radius-lg: 12px;       /* Slightly reduced for a sharper, classic look */
+  --border-radius-md: 8px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* Prevents scrollbars during animation */
+}
+
+.container {
+  background-color: var(--container-bg);
+  padding: 40px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  max-width: 400px;
+  width: 90%;
+  /* backdrop-filter is less effective on light backgrounds, can be removed */
+  border: 1px solid #e9ecef;
+  text-align: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--primary-glow);
+  text-shadow: none; /* Text shadow is not needed on a light background */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+input,
+select {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-color); /* Start with a visible border */
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  outline: none;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+  color: #6c757d; /* A darker placeholder for readability on light BG */
+  font-weight: 300;
+}
+
+input:focus,
+select:focus {
+  background-color: var(--input-focus-bg);
+  border-color: var(--primary-glow);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Focus ring effect */
+}
+
+button {
+  padding: 15px;
+  background: linear-gradient(90deg, var(--primary-glow), var(--primary-accent));
+  background-size: 200% 100%;
+  border: none;
+  border-radius: var(--border-radius-md);
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff; /* White text on blue button */
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+button:hover {
+  background-position: 100% 0;
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+button:active {
+  transform: scale(0.98);
+  box-shadow: none;
+}
+
+.result {
+  margin-top: 30px;
+  font-size: 22px;
+  color: var(--text-highlight);
+  font-weight: 600;
+  /* Removed pulsing animation for a cleaner, classic look */
+  /* If you want it back, just add: animation: pulseGlow 2s infinite alternate; */
+}
+
+/* Keyframe animations remain the same */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* We redefine pulseGlow in case you want to use it */
+@keyframes pulseGlow {
+  from {
+    text-shadow: 0 0 3px var(--text-highlight);
+  }
+  to {
+    text-shadow: 0 0 10px var(--text-highlight);
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+}
