@@ -8,6 +8,11 @@ model = pickle.load(open('models/random_forest.pkl', 'rb'))
 sc = pickle.load(open('models/input_scaler.pkl', 'rb'))
 sct = pickle.load(open('models/output_scaler.pkl', 'rb'))
 
+model = pickle.load(open('models/random_forest.pkl', 'rb'))
+sc = pickle.load(open('models/input_scaler.pkl', 'rb'))
+sct = pickle.load(open('models/output_scaler.pkl', 'rb'))
+
+
 st.title("Medical Insurance Cost Predictor")
 
 age = st.number_input("Age", 18, 100, 30)
