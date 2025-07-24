@@ -2,21 +2,12 @@
 import streamlit as st
 import pandas as pd
 import pickle
-
-
 import os
-model_path = os.path.join(os.path.dirname(__file__), 'models', 'random_forest.pkl')
-
-
-# Load model and scalers
-model = pickle.load(open('models/random_forest.pkl', 'rb'))
-sc = pickle.load(open('models/input_scaler.pkl', 'rb'))
-sct = pickle.load(open('models/output_scaler.pkl', 'rb'))
-
-model = pickle.load(open('models/random_forest.pkl', 'rb'))
-sc = pickle.load(open('models/input_scaler.pkl', 'rb'))
-sct = pickle.load(open('models/output_scaler.pkl', 'rb'))
-
+ 
+base_path = os.path.dirname(__file__)
+model = pickle.load(open(os.path.join(base_path, 'models', 'random_forest.pkl'), 'rb'))
+sc = pickle.load(open(os.path.join(base_path, 'models', 'input_scaler.pkl'), 'rb'))
+sct = pickle.load(open(os.path.join(base_path, 'models', 'output_scaler.pkl'), 'rb'))
 
 st.title("Medical Insurance Cost Predictor")
 
