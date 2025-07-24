@@ -3,6 +3,11 @@ import streamlit as st
 import pandas as pd
 import pickle
 
+
+import os
+model_path = os.path.join(os.path.dirname(__file__), 'models', 'random_forest.pkl')
+
+
 # Load model and scalers
 model = pickle.load(open('models/random_forest.pkl', 'rb'))
 sc = pickle.load(open('models/input_scaler.pkl', 'rb'))
