@@ -17,8 +17,9 @@ Medical insurance pricing has always been a black box for most people. I was cur
 ## 📸 Some Screenshots
 
 <p align="center">
-  <img src="images\pairplot.jpg" width="400"/>
-  <img src="images\actualvpredicted.png" width="400"/>
+  <img src="https://github.com/YugandharAllaka/medical-insurance-cost-predictor/blob/main/assets/correlation.png" width="400"/>
+  <img src="https://github.com/YugandharAllaka/medical-insurance-cost-predictor/blob/main/assets/age_vs_charges.png" width="400"/>
+  <img src="https://github.com/YugandharAllaka/medical-insurance-cost-predictor/blob/main/assets/deployment.png" width="400"/>
 </p>
 
 ---
