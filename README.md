@@ -62,3 +62,29 @@ The dataset used in this project is publicly available on Kaggle:
 ### 1. Install dependencies:
 ```bash
 pip install -r requirements.txt
+
+
+## 🛠 How to Run Locally
+
+### 1️⃣ Clone this repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
+
+2️⃣ Install dependencies:
+
+pip install -r requirements.txt
+
+3️⃣ Start the Flask backend API:
+
+cd backend
+python app.py
+
+4️⃣ Run the Streamlit frontend:
+In a new terminal:
+
+streamlit run streamlit_app.py
+
+❤️ Owner
+Made with ❤️ by Allaka Yugandhar
